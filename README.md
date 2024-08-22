@@ -1,4 +1,3 @@
-
 ## Posts and comments API
 
 This is a Django project that implements a simple API for managing posts and comments connected with local postgres database run on Docker and docker compose.
@@ -20,6 +19,7 @@ Here goes the description how I created the app and worked on it:
 So for now the sync happens at the start of the app before it runs the import command will run and import data into local db.
 
 I used some packages while implementing this app:
+
 - `PyJWT`, `djangorestframework-simplejwt` for authentication and authorization.
 - `psycopg2` to deal with postgres database.
 - `requests` to call the fake api service and import data.
@@ -34,7 +34,7 @@ To run the project locally, follow these steps:
 4. In the `start.sh` file we got all the necessary commands to make the app run and do migrations for DB.
 5. Before starting the app Importing posts and comments command from django will run, it will take sometime before start.
 6. App is up and running now and you can use APIs or Django admin even though to check `posts` and `comments`.
-7. You need to create a superuser to be able to access authenticated APIs so run this command `docker exec -it stroer_api-backend-1 bash` or change the container name to the created name - hence check `docker ps`.
+7. You need to create a superuser to be able to access authenticated APIs so run this command `docker exec -it blog_api-backend-1 bash` or change the container name to the created name - hence check `docker ps`.
 8. You are now inside docker so now create super user bu running `python manage.py createsuperuser` and fill all details required.
 9. Now you are all set and you can login to Django admin.
 10. In terms of use API calls you need to be authenticated so you need to authenticate using this API call with the created user.
@@ -45,10 +45,10 @@ To run the project locally, follow these steps:
     ```
 11. Output should be 2 tokens and looks like this:
     ```json
-        {
-            "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcxMzIxMzQ0MCwiaWF0IjoxNzEzMTI3MDQwLCJqdGkiOiI4NDA4N2Y2YTMzOWE0NjI5OGVhMjBhYzAxOTJlMzM4MiIsInVzZXJfaWQiOjF9.O8JnYjd7M9XSvl2QwW6C-PKKapOhifTQcZ2VL_HrX_g",
-            "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEzMTI3MzQwLCJpYXQiOjE3MTMxMjcwNDAsImp0aSI6ImNiYTUwMTQ1MDlmNzRiODI5NjA4N2M4MzMzZGRhYWZjIiwidXNlcl9pZCI6MX0.7qbpzoD7D9X73ZUrjhXGFCqAeLwwHODcjXfBna_sxdM"
-        }
+    {
+      "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcxMzIxMzQ0MCwiaWF0IjoxNzEzMTI3MDQwLCJqdGkiOiI4NDA4N2Y2YTMzOWE0NjI5OGVhMjBhYzAxOTJlMzM4MiIsInVzZXJfaWQiOjF9.O8JnYjd7M9XSvl2QwW6C-PKKapOhifTQcZ2VL_HrX_g",
+      "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEzMTI3MzQwLCJpYXQiOjE3MTMxMjcwNDAsImp0aSI6ImNiYTUwMTQ1MDlmNzRiODI5NjA4N2M4MzMzZGRhYWZjIiwidXNlcl9pZCI6MX0.7qbpzoD7D9X73ZUrjhXGFCqAeLwwHODcjXfBna_sxdM"
+    }
     ```
 12. Now you can use the `access` token to call APIs but if it didn't work you can generate a new one using the `refresh` token by running:
     ```bash
@@ -58,7 +58,7 @@ To run the project locally, follow these steps:
 13. Now you got the access token again in case it got expired andshould the output looks like this:
     ```json
     {
-        "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEzMTM0NjA0LCJpYXQiOjE3MTMxMjcwNDAsImp0aSI6IjA4MTA1ODZmMDUwYzQyYzdiNDk5MjdiYWU0MjY1YjA1IiwidXNlcl9pZCI6MX0.jFDKptf03x_7WMI9qtdfDP84uzven7RvZlN0Zs7wpqc"
+      "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEzMTM0NjA0LCJpYXQiOjE3MTMxMjcwNDAsImp0aSI6IjA4MTA1ODZmMDUwYzQyYzdiNDk5MjdiYWU0MjY1YjA1IiwidXNlcl9pZCI6MX0.jFDKptf03x_7WMI9qtdfDP84uzven7RvZlN0Zs7wpqc"
     }
     ```
 14. Now you can use the access to call APIs eg:
@@ -77,4 +77,4 @@ To run the project locally, follow these steps:
 - Improve testing from 3 points (coverage, structure and setup) where we can creat `fixtures` and auto seed for DB, better structure for test files and increase test coverage for sure.
 - Add more APIs to cover more scenarios of retrieving data to make it more convieniant for the user.
 - Add more documentation.
-and maybe more.
+  and maybe more.

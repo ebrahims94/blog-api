@@ -28,7 +28,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(default='title', max_length=150)),
-                ('email', models.EmailField(default='user@stroer.com', max_length=250)),
+                ('email', models.EmailField(default='user@blog.com', max_length=250)),
                 ('body', models.TextField(default='body')),
                 ('created_at', models.DateTimeField(auto_now_add=True, null=True)),
                 ('updated_at', models.DateTimeField(auto_now=True, null=True)),

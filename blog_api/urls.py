@@ -1,5 +1,5 @@
 """
-URL configuration for stroer_api project.
+URL configuration for blog_api project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/

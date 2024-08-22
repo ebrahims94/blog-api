@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   backend:
@@ -17,6 +17,6 @@ services:
     environment:
       - POSTGRES_USER=pguser
       - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=stroer
+      - POSTGRES_DB=blog
     ports:
       - "5432:5432"
