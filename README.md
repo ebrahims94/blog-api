@@ -1,4 +1,3 @@
-# Stroer Technical Task - Ebrahim Shakhatreh
 
 ## Posts and comments API
 
