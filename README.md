@@ -68,10 +68,11 @@ To run the project locally, follow these steps:
     ```
 15. Now all set and good to go!
 
-## Imrovements
+## Improvements
 
-    In general this task is a first draft and didn't take long time, so many improvments possible here and I might not mention all of them.
+    In general this is a first draft and didn't take long time, so many improvments possible here and I might not mention all of them.
 
+- Improve the views and make it more restful by spliting it into `ListCreateAPIView` for listing and creating blogs `RetrieveUpdateDestroyAPIView` for update and delete actions from django.
 - Improve the models we have and integrate with `user` model.
 - Improve the import command and only use 2 hits to get `Posts` and `Comments` and do the relations in the application level.
 - Improve testing from 3 points (coverage, structure and setup) where we can creat `fixtures` and auto seed for DB, better structure for test files and increase test coverage for sure.
