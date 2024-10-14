@@ -11,7 +11,7 @@ Here goes the description how I created the app and worked on it:
 - I added the models based on the data model in the [Json placeholder](https://jsonplaceholder.typicode.com/) tried to be close to avoid any problems with importing data.
 - I implemented the import command and tried some tests with it.
 - I implemented serializers and tried to make it informative as much.
-- I implemented the APIs and it was a default `ModelViewSet` from django to keep it simple.
+- I implemented the APIs and it was a default `ModelViewSet` from django to keep it simple but it is not a best practice but for the sake of experiment nothing more.
 - I added the authentication to protect the API calls.
 - I implemented the tests for all functioanlity at the end.
 - Wrote some docuemtation and learnings as well.
